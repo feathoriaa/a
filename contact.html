@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-339FX3FFSG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-339FX3FFSG');
+</script>
+</style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3455727846422624"
+     crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Feathoria</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="logo.jpg" type="image/jpeg" />
+  <link rel="apple-touch-icon" href="logo.jpg" />
+
+  <!-- Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="contact.css" />
+
+  <!-- Meta -->
+  <meta name="description" content="Get in touch with Feathoria. Send us your questions, suggestions, or feedback through our contact form." />
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html" aria-label="Back to homepage">
+      <img src="logo.jpg" alt="Feathoria Logo" class="logo" />
+    </a>
+  </nav>
+
+  <!-- Contact Form Section -->
+  <main class="contact-container">
+    <h1>Contact Us</h1>
+    <p>Have a question or suggestion? Send us a message and we’ll get back to you shortly.</p>
+
+    <form id="contactForm" action="https://formspree.io/f/meovjeqj" method="POST">
+      <!-- Name -->
+      <label for="name">Your Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="John Doe"
+        required
+      />
+
+      <!-- Email -->
+      <label for="email">Your Email</label>
+      <input
+        type="email"
+        id="email"
+        name="_replyto"
+        placeholder="you@example.com"
+        required
+      />
+
+      <!-- Subject -->
+      <label for="subject">Subject</label>
+      <input
+        type="text"
+        id="subject"
+        name="subject"
+        placeholder="Reason for contact"
+        required
+      />
+
+      <!-- Message -->
+      <label for="message">Message</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="6"
+        placeholder="Write your message here..."
+        required
+      ></textarea>
+
+      <!-- Submit -->
+      <button type="submit" id="submitBtn">Send Message</button>
+    </form>
+  </main>
+
+  <!-- Floating Contact Icon -->
+  <a href="contact.html" class="contact-float" title="Contact Us">
+    <img src="ct.jpg" alt="Contact Icon" />
+  </a>
+
+  <!-- ✅ JavaScript Redirect (reliable anywhere) -->
+  <script>
+    const form = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Disable button + show status
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          window.location.href = 'thankyou.html'; // Redirect on success
+        } else {
+          alert('Oops! Something went wrong while sending your message.');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
+        }
+      } catch (error) {
+        alert('Network error. Please check your connection and try again.');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+    });
+  </script>
+
+  <!-- Feathoria -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3455727846422624"
+     data-ad-slot="4211400293"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</body>
+</html>

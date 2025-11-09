@@ -1,0 +1,287 @@
+/* ===== Body & Background ===== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lora', serif;
+  background-image: url('bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #E6E6FA;
+  position: relative;
+}
+
+/* Overlay to enhance contrast */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3); /* subtle dark overlay */
+  z-index: -1;
+}
+
+/* ===== Header ===== */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: rgba(25, 0, 50, 0.7);
+  backdrop-filter: blur(5px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+#logo {
+  width: 150px;
+  height: auto;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #FFF8E7;
+  font-family: 'Playfair Display', serif;
+  text-shadow: 0 0 5px #00FFFF, 0 0 10px rgba(0,255,255,0.4);
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #00FFFF;
+  font-weight: 500;
+  transition: all 0.3s;
+  text-shadow: 0 0 3px rgba(0, 255, 255, 0.4);
+}
+
+header nav a:hover {
+  text-shadow: 0 0 12px #00FFFF, 0 0 20px rgba(0,255,255,0.6);
+}
+
+/* Quote Generator & other nav icons */
+nav a img {
+  width: 50px;       /* adjust size */
+  height: auto;
+  margin-left: 10px;
+  vertical-align: middle;
+  transition: transform 0.2s ease;
+}
+
+nav a img:hover {
+  transform: scale(1.1);
+}
+
+
+/* ===== Game Icon ===== */
+header nav .game-icon {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+header nav .game-icon img {
+  width: 100%;
+  height: 100%;
+}
+
+header nav .game-icon:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px #00FFFF, 0 0 30px rgba(0,255,255,0.6);
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  text-align: center;
+  margin: 80px 20px 50px 20px;
+}
+
+.hero h2 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  color: #FFF8E7;
+  font-family: 'Playfair Display', serif;
+  text-shadow: 0 0 5px #00FFFF, 0 0 20px rgba(0,255,255,0.3);
+}
+
+.hero p {
+  font-size: 1.25rem;
+  color: #F0F8FF;
+  text-shadow: 0 0 3px rgba(0, 255, 255, 0.3), 0 0 10px rgba(0,255,255,0.2);
+}
+
+/* ===== Boxes Container ===== */
+.boxes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+/* Individual Boxes */
+.box {
+  background: rgba(30, 15, 60, 0.85);
+  border-radius: 20px;
+  padding: 25px;
+  width: 350px;
+  min-height: 250px;
+  box-shadow: 0 8px 25px rgba(106, 90, 205, 0.5);
+  color: #FFFFFF;
+  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+  border: 1px solid rgba(0,255,255,0.3);
+}
+
+.box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(106, 90, 205, 0.7), 0 0 15px rgba(0,255,255,0.4);
+  border: 1px solid #00FFFF;
+}
+
+.box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  color: #FFF8E7;
+  font-family: 'Playfair Display', serif;
+  text-shadow: 0 0 8px #00FFFF, 0 0 15px rgba(0,255,255,0.4);
+}
+
+/* ===== Poem & Quote Items ===== */
+.poem-item, .quote-item {
+  margin-bottom: 20px;
+  line-height: 1.9;
+  font-size: 1rem;
+  color: #FFFFFF;
+  text-shadow: 0 0 8px #00FFFF, 0 0 15px rgba(0,255,255,0.5);
+  padding: 15px 20px;
+  background: rgba(40, 20, 70, 0.85);
+  border-radius: 12px;
+  border: 1px solid rgba(0,255,255,0.2);
+}
+
+/* ===== Accordion Items ===== */
+.accordion-item h3 {
+  cursor: pointer;
+  margin: 0;
+  padding: 14px 18px;
+  background: rgba(50, 10, 90, 0.85);
+  color: #FFFFFF;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  border-radius: 12px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+  transition: all 0.2s ease;
+  border: 1px solid rgba(0,255,255,0.3);
+}
+
+.accordion-item h3:hover {
+  background: rgba(70, 0, 130, 0.95);
+  box-shadow: 0 0 25px #00FFFF, 0 0 35px rgba(0,255,255,0.4);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 20px;
+  transition: max-height 0.35s ease, opacity 0.3s ease, padding 0.3s ease;
+  background: rgba(40, 20, 70, 0.85);
+  border-radius: 0 0 15px 15px;
+  color: #FFFFFF;
+  line-height: 1.9;
+  font-family: 'Lora', serif;
+  text-shadow: 0 0 12px rgba(0, 255, 255, 0.6);
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.accordion-content[data-open="true"] {
+  opacity: 1;
+}
+
+/* Hover highlight for items */
+.item-hover {
+  transform: scale(1.03);
+  background: rgba(60, 20, 120, 0.3);
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+/* ===== Random Button ===== */
+.random-button {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.random-button button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #6A5ACD, #FF69B4);
+  color: #FFF8E7;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(106, 90, 205, 0.6);
+  transition: all 0.3s;
+}
+
+.random-button button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 105, 180, 0.8), 0 0 15px #00FFFF;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background: rgba(25, 0, 50, 0.7);
+  backdrop-filter: blur(5px);
+  margin-top: 50px;
+  color: #FFF8E7;
+  font-family: 'Playfair Display', serif;
+  text-shadow: 0 0 3px rgba(0, 255, 255, 0.3);
+}
+
+/* ===== Scroll-to-top button ===== */
+#scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 10px 15px;
+  background: linear-gradient(135deg, #6A5ACD, #FF69B4);
+  color: #FFF8E7;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 0 15px rgba(106, 90, 205, 0.6);
+  transition: all 0.3s;
+  z-index: 999;
+}
+
+#scroll-top:hover {
+  background: linear-gradient(135deg, #7B68EE, #FF85C1);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 105, 180, 0.8), 0 0 15px #00FFFF;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .boxes-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .box {
+    width: 90%;
+  }
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

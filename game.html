@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feathoria - Inkspire</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-339FX3FFSG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-339FX3FFSG');
+  </script>
+
+  <!-- Google AdSense -->
+  <script async 
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3455727846422624"
+    crossorigin="anonymous">
+  </script>
+
+  <!-- Favicon / Site Icon -->
+  <link rel="icon" href="logo.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="logo.jpg">
+
+  <!-- Game Stylesheet -->
+  <link rel="stylesheet" href="game.css">
+
+  <!-- Back to Home Button Styles -->
+  <style>
+    #backHome {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      padding: 8px 12px;
+      background-color: rgba(75, 54, 33, 0.8);
+      color: #fff;
+      font-family: 'Lora', serif;
+      font-size: 0.9rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      z-index: 1000;
+      transition: background 0.3s;
+    }
+    #backHome:hover {
+      background-color: rgba(75, 54, 33, 1);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Back to Home Button -->
+  <a href="index.html" id="backHome">← Back to Home</a>
+
+  <!-- Mode Selector Overlay -->
+  <div id="modeSelector">
+    <h2>Welcome to Feathoria</h2>
+    <p>Choose your adventure:</p>
+    <button id="modeA">Calm / Healing</button>
+    <button id="modeB">Arcade / Energetic</button>
+  </div>
+
+  <!-- Header with Game Title and Score -->
+  <header>
+    <h1>Feathoria</h1>
+    <div id="scoreContainer">
+      <span id="score">Score: 0</span>
+      <span id="highScore">Best: 0</span>
+    </div>
+  </header>
+
+  <!-- Instruction Overlay -->
+  <div id="instructions" class="hidden">
+    <p>Click or press <strong>Space</strong> to flap your wings!</p>
+  </div>
+
+  <!-- Game Canvas -->
+  <canvas id="gameCanvas"></canvas>
+
+  <!-- Particle Effects Canvas -->
+  <canvas id="particlesCanvas"></canvas>
+
+  <!-- Optional Ground Layer for Visual Effects -->
+  <div id="ground"></div>
+
+  <!-- Game Over Modal -->
+  <div id="gameOver" class="hidden">
+    <h2>Game Over</h2>
+    <p id="finalScore"></p>
+    <button id="restartBtn">Restart</button>
+  </div>
+
+  <!-- Game Script -->
+  <script src="game.js"></script>
+
+  <!-- AdSense Block -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-3455727846422624"
+       data-ad-slot="4211400293"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+/* =============================
+   Feathoria Game Stylesheet
+   Mobile-Friendly / Responsive
+   ============================= */
+
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Body ===== */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom, #6ac4ff 0%, #cbeaff 100%);
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+/* ===== Sun / Moon (Optional Decorative Element) ===== */
+#sun {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  width: 12vw;
+  height: 12vw;
+  background: radial-gradient(circle, #fffbcc, #ffd54f);
+  border-radius: 50%;
+  z-index: 0;
+  filter: blur(10px);
+  opacity: 0.9;
+}
+
+/* ===== Header ===== */
+header {
+  position: absolute;
+  top: 1%;
+  width: 100%;
+  text-align: center;
+  z-index: 20;
+}
+header h1 {
+  font-size: 2.5vw;
+  color: #ffffff;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+#scoreContainer {
+  color: #ffffff;
+  font-size: 1.5vw;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== Instructions ===== */
+#instructions {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  font-size: 2vw;
+  color: #ffffff;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
+  z-index: 25;
+}
+.hidden {
+  display: none;
+}
+
+/* ===== Canvas ===== */
+#gameCanvas,
+#particlesCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 5;
+}
+
+/* ===== Ground ===== */
+#ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 15vh;
+  background: linear-gradient(to top, #9b5e2a, #eab676);
+  z-index: 10;
+}
+
+/* ===== Game Over Popup ===== */
+#gameOver {
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2vw 4vw;
+  border-radius: 2vw;
+  border: 0.3vw solid #333;
+  text-align: center;
+  z-index: 50;
+  display: none;
+}
+#gameOver.show {
+  display: block;
+}
+#restartBtn {
+  background: #ffdf4a;
+  border: none;
+  padding: 1vw 2vw;
+  border-radius: 1.2vw;
+  font-size: 1.5vw;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s, background 0.2s;
+}
+#restartBtn:hover {
+  background: #ffd22c;
+  transform: scale(1.06);
+}
+
+/* ===== Mode Selector ===== */
+#modeSelector {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 4vw 6vw;
+  border-radius: 1.5vw;
+  z-index: 50;
+  box-shadow: 0 2vw 4vw rgba(0, 0, 0, 0.4);
+}
+#modeSelector button {
+  margin: 1vw;
+  padding: 1vw 2vw;
+  font-size: 1.5vw;
+  cursor: pointer;
+  border: none;
+  border-radius: 1vw;
+  background-color: #ffd700;
+  color: #333;
+  font-weight: bold;
+  transition: transform 0.2s, background-color 0.2s;
+}
+#modeSelector button:hover {
+  transform: scale(1.05);
+  background-color: #ffc107;
+}
+
+/* ===== Game Container ===== */
+#game-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* ===== Canvas Tag Variant (fallback) ===== */
+canvas#game {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== Game Buttons ===== */
+.game-button {
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* ===== Mobile Adjustments ===== */
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 6vw;
+  }
+  #scoreContainer {
+    font-size: 4vw;
+  }
+  #instructions {
+    font-size: 4vw;
+  }
+  #modeSelector {
+    width: 85%;
+    padding: 6vw 4vw;
+  }
+  #modeSelector button {
+    font-size: 4.5vw;
+    padding: 2vw 4vw;
+  }
+  #gameOver {
+    width: 80%;
+    padding: 6vw 5vw;
+  }
+  #restartBtn {
+    font-size: 4vw;
+    padding: 2vw 4vw;
+  }
+  canvas#game {
+    width: 100%;
+    height: auto;
+  }
+  .game-button {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
+
+/* ===== Fix Mobile Tap Controls ===== */
+canvas,
+#gameCanvas,
+#particlesCanvas {
+  touch-action: none;          /* Prevents scrolling and zooming on touch */
+  user-select: none;           /* Prevents text highlight */
+  -webkit-user-select: none;   /* Safari / iOS */
+  -ms-user-select: none;       /* IE / Edge */
+  -webkit-touch-callout: none; /* Disables iOS long-press menu */
+}
+
+#particlesCanvas {
+  pointer-events: none;        /* Allows taps to pass through overlay */
+}
+
+#gameCanvas {
+  pointer-events: auto;        /* Ensures main canvas gets tap input */
+}

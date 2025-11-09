@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-339FX3FFSG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-339FX3FFSG');
+</script>
+</style>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3455727846422624"
+     crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feathoria – Create & Design Your Quotes</title>
+
+<!-- Favicon -->
+<link rel="icon" href="logo.jpg" type="image/jpeg">
+<link rel="apple-touch-icon" href="logo.jpg">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="own.css">
+
+<!-- html2canvas -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<!-- JS -->
+<script src="own.js" defer></script>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo-link">
+    <img src="logo.jpg" alt="Feathoria Home" class="home-logo">
+  </a>
+  <div class="header-text">
+    <h1>Feathoria</h1>
+    <p>Create, customize, and export your own quotes & poems beautifully.</p>
+  </div>
+</header>
+
+<main>
+  <!-- 📝 Input Controls -->
+  <section class="quote-controls">
+    <div class="inputs">
+
+      <label for="quoteInput">Write your quote (max 200 characters)</label>
+      <textarea id="quoteInput" maxlength="200" placeholder="Type your quote here..."></textarea>
+
+      <label for="authorInput">Author name</label>
+      <input type="text" id="authorInput" placeholder="Your name or pen name">
+
+      <!-- 🎨 Design Controls -->
+      <div class="selectors">
+        <div class="select-wrapper">
+          <label for="bgSelect">Preset Background:</label>
+          <select id="bgSelect">
+            <option value="bg1">Soft Gradient</option>
+            <option value="bg2">Lavender Haze</option>
+            <option value="bg3">Pastel Sunset</option>
+            <option value="bg4">Ocean Blue</option>
+            <option value="bg5">Sunset Glow</option>
+            <option value="bg6">Minty Fresh</option>
+          </select>
+        </div>
+
+        <div class="select-wrapper">
+          <label for="fontSelect">Font Style:</label>
+          <select id="fontSelect">
+            <option value="Playfair Display">Playfair Display</option>
+            <option value="Roboto">Roboto</option>
+            <option value="Dancing Script">Dancing Script</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- 🎨 Text Color -->
+      <div class="color-picker">
+        <label for="textColor">Text Color:</label>
+        <input type="color" id="textColor" value="#000000">
+      </div>
+
+      <!-- 🖼️ Custom Background & Filters -->
+      <div class="custom-bg-controls">
+        <label for="bgUpload">Upload Background:</label>
+        <input type="file" id="bgUpload" accept="image/*">
+
+        <label for="brightnessRange">Brightness:</label>
+        <input type="range" id="brightnessRange" min="50" max="150" value="100">
+
+        <label for="blurRange">Blur:</label>
+        <input type="range" id="blurRange" min="0" max="10" value="0">
+      </div>
+
+      <!-- 🎞️ Filter Presets -->
+      <div class="filter-presets">
+        <label>Quick Filters:</label>
+        <div class="filter-buttons">
+          <button type="button" data-filter="none">Original</button>
+          <button type="button" data-filter="dreamy">Dreamy</button>
+          <button type="button" data-filter="warm">Warm</button>
+          <button type="button" data-filter="cool">Cool</button>
+          <button type="button" data-filter="bw">B&W</button>
+        </div>
+      </div>
+
+      <!-- ⚙️ Toggles -->
+      <div class="toggles">
+        <label><input type="checkbox" id="shadowToggle"> Add text shadow</label>
+        <label><input type="checkbox" id="logoToggle"> Show watermark/logo</label>
+      </div>
+
+      <!-- 📐 Aspect Ratio Controls -->
+      <div class="aspect-controls">
+        <label for="aspectSelect">Aspect Ratio:</label>
+        <select id="aspectSelect">
+          <option value="square" selected>Square (1:1)</option>
+          <option value="story">Story (9:16)</option>
+          <option value="banner">Banner (16:9)</option>
+        </select>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 🔮 Live Preview -->
+  <section class="preview-section">
+    <h2>Live Preview</h2>
+    <div id="quotePreview" class="quote-card bg1 square">
+      <div class="quote-overlay">
+        <p id="quoteText">"Your quote will appear here..."</p>
+        <span id="quoteAuthor">– Your Name</span>
+      </div>
+      <img id="logo" class="logo" src="logo.jpg" alt="Feathoria Logo">
+    </div>
+    <button id="downloadBtn" class="download-btn">Download as PNG</button>
+  </section>
+
+  <!-- 📖 Instructions -->
+  <section class="instructions">
+    <h3>How to Use Feathoria</h3>
+    <ol>
+      <li>Type your quote and name above.</li>
+      <li>Choose a background or upload your own image.</li>
+      <li>Adjust brightness, blur, and text color for your style.</li>
+      <li>Pick your favorite font and layout (Square, Story, or Banner).</li>
+      <li>Toggle text shadow and watermark if needed.</li>
+      <li>Preview your design instantly.</li>
+      <li>Click “Download as PNG” to save your creation.</li>
+    </ol>
+  </section>
+</main>
+<!-- Feathoria -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-3455727846422624"
+     data-ad-slot="4211400293"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<footer>
+  <p>© 2025 Feathoria. Designed for creators and dreamers ✨</p>
+</footer>
+
+</body>
+</html>
